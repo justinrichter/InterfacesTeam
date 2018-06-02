@@ -8,12 +8,14 @@ namespace ComicBookGallery.Controllers
 {
     public class ComicBooksController : Controller
     {
-        public ContentResult Detail()
+        public ActionResult Detail()  //Base class is shared Result Type for ContentResult and RedirectResult
         {
-            return new ContentResult()
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Friday)
             {
-                Content = "Hello from the comic books controller"
-            };            
+                return Redirect("/");
+            };
+
+            return Content("Hello from the comic books controller");
         }
     }
 }
