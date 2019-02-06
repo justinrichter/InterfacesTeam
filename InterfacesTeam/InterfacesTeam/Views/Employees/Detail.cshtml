@@ -1,0 +1,38 @@
+﻿@model InterfacesTeam.Models.Employee
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = Model.DisplayText;
+    ViewBag.ShowBackBar = true;
+
+}
+
+<h2><b>@Model.DisplayText</b></h2>
+
+
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="well">
+            <img src="/Images/@Model.CoverImageFileName"
+                 alt="@Model.DisplayText" class="img-responsive" align="middle" />
+            <h5><label><b>Title:</b></label> @Model.Title</h5>
+            <h5><label><b>Team:</b></label> @Model.Team</h5>
+            <h5><label><b>Average Rating:</b></label> @Model.AverageRating</h5>
+            @if (Model.Skills.Length > 0)
+            {
+                <h5><b>Development Languages</b></h5>
+                <div>
+                    <ul>
+                        @foreach (var Skill in Model.Skills)
+                        {
+                            <li>@Skill.Name</li>
+                        }
+                    </ul>
+                </div>
+            }
+        </div>
+        <h5><b>Description</b></h5>
+        <div>@Html.Raw(Model.Description)</div>
+    </div>
+</div>

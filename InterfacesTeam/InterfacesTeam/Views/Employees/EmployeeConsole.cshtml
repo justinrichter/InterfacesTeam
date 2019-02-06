@@ -1,0 +1,117 @@
+﻿@model InterfacesTeam.Models.Employee
+
+    @{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    @{
+        ViewBag.Title = "Console";
+        ViewBag.ShowBackBar = true;
+    }
+    <h2>Employee Console</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well">
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+                <fieldset>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => Model.FirstName)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => Model.FirstName)
+                        @Html.ValidationMessageFor(model => Model.FirstName)
+                    </div>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => Model.LastName)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => Model.LastName)
+                        @Html.ValidationMessageFor(model => Model.LastName)
+                    </div>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => Model.Title)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => Model.Title)
+                        @Html.ValidationMessageFor(model => Model.Title)
+                    </div>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => Model.Team)
+                    </div>
+                    <form action="/action_page.php">
+                        <select name="Team">
+                            <Option value=""></Option>
+                            <Option value="InterfacesDev911">Interfaces Dev 911</Option>
+                            <Option value="Olympians">Olympians</Option>
+                            <Option value="Clinically Clouded Madness">Clinically Clouded Madness</Option>
+                        </select>
+                    </form>
+                    <p>
+                        <input type="submit" value="Search" />
+                        <input type="submit" value="Create New Employee" />
+                    </p>
+
+                    <table style="width: 100%; margin-right: auto; margin-left: auto;" border="0">
+                        <tbody>
+                            <tr style="height: 20px;">
+                                <td style="width: 14%; height: 20px;">&nbsp;<strong>First Name</strong></td>
+                                <td style="width: 14%; height: 20px;">&nbsp;<strong>Last Name</strong></td>
+                                <td style="width: 12%; height: 20px;">&nbsp;<strong>Title</strong></td>
+                                <td style="width: 12%; height: 20px;">&nbsp;<strong>Team</strong></td>
+                                <td style="width: 11.51%; height: 20px;"><strong>&nbsp;Avg. Rating</strong></td>
+                                <td style="width: 77.48%; height: 20px;"><strong>Description</strong></td>
+                            </tr>
+                            <tr style="height: 20.5px;">
+                                <td style="width: 14%; height: 20.5px;">&nbsp;</td>
+                                <td style="width: 14%; height: 20.5px;">&nbsp;</td>
+                                <td style="width: 12%; height: 20.5px;">&nbsp;</td>
+                                <td style="width: 12%; height: 20.5px;">&nbsp;</td>
+                                <td style="width: 11.51%; height: 20.5px;">&nbsp;</td>
+                                <td style="width: 77.48%; height: 20.5px;">&nbsp;</td>
+                            </tr>
+                            <tr style="height: 20px;">
+                                <td style="width: 14%; height: 20px;">&nbsp;</td>
+                                <td style="width: 14%; height: 20px;">&nbsp;</td>
+                                <td style="width: 12%; height: 20px;">&nbsp;</td>
+                                <td style="width: 12%; height: 20px;">&nbsp;</td>
+                                <td style="width: 11.51%; height: 20px;">&nbsp;</td>
+                                <td style="width: 77.48%; height: 20px;">&nbsp;</td>
+                            </tr>
+                            <tr style="height: 20px;">
+                                <td style="width: 14%; height: 20px;">&nbsp;</td>
+                                <td style="width: 14%; height: 20px;">&nbsp;</td>
+                                <td style="width: 12%; height: 20px;">&nbsp;</td>
+                                <td style="width: 12%; height: 20px;">&nbsp;</td>
+                                <td style="width: 11.51%; height: 20px;">&nbsp;</td>
+                                <td style="width: 77.48%; height: 20px;">&nbsp;</td>
+                            </tr>
+                            <tr style="height: 20px;">
+                                <td style="width: 14%; height: 20px;">&nbsp;</td>
+                                <td style="width: 14%; height: 20px;">&nbsp;</td>
+                                <td style="width: 12%; height: 20px;">&nbsp;</td>
+                                <td style="width: 12%; height: 20px;">&nbsp;</td>
+                                <td style="width: 11.51%; height: 20px;">&nbsp;</td>
+                                <td style="width: 77.48%; height: 20px;">&nbsp;</td>
+                            </tr>
+                            <tr style="height: 20px;">
+                                <td style="width: 14%; height: 20px;">&nbsp;</td>
+                                <td style="width: 14%; height: 20px;">&nbsp;</td>
+                                <td style="width: 12%; height: 20px;">&nbsp;</td>
+                                <td style="width: 12%; height: 20px;">&nbsp;</td>
+                                <td style="width: 11.51%; height: 20px;">&nbsp;</td>
+                                <td style="width: 77.48%; height: 20px;">&nbsp;</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <p>
+                        <input type="submit" value="Update" />
+                        <input type="submit" value="Delete" />
+                    </p>
+                </fieldset>
+                }
+            </div>
+        </div>
+    </div>

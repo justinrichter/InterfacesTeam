@@ -1,0 +1,26 @@
+﻿@model InterfacesTeam.Models.Employee[]
+
+@{
+    ViewBag.Title = "Team Members";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    @foreach (var Employee in Model)
+    {
+        <div class="col-md-3">
+            <center><h4>@Html.ActionLink(Employee.FirstName + " " + Employee.LastName, "Detail",
+               new { id = Employee.Id })</h4></center>
+            <a href="@Url.Action("Detail", new { id = Employee.Id })">
+            <img src="/Images/@Employee.CoverImageFileName"
+                 alt="@Employee.DisplayText"
+                 class="img-responsive"
+                 width=500
+                 height=600
+                 align="middle"/>
+            </a>
+        </div>
+    }
+
+</div>
